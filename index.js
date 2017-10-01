@@ -94,8 +94,8 @@ function cleanEnv(inputEnv, specs = {}, options = {}) {
             rawValue = devDefault === undefined ? spec.default : devDefault
         }
 
-        // Default values can be anything falsy (including an explicitly set undefined), without
-        // triggering validation errors:
+        // Default values can be explicitly set to undefined
+        // without triggering validation errors:
         const usingFalsyDefault =
             (spec.hasOwnProperty('default') && spec.default === rawValue) ||
             (usingDevDefault && devDefault === rawValue)
